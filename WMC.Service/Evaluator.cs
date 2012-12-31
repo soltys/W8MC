@@ -48,7 +48,9 @@ namespace WMC.Service
         }
         public string Interpret()
         {
-            return "using System;" + Environment.NewLine + _expression.Interpret();
+            
+                return "using System;" + Environment.NewLine + _expression.Interpret();    
+            
         }
     }
 }

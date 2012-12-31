@@ -41,19 +41,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClassExpression.cs" />
-    <Compile Include="DateTimeExpression.cs" />
-    <Compile Include="DoubleExpression.cs" />
+    <Compile Include="Entity\DateTimeExpression.cs" />
+    <Compile Include="Entity\DoubleExpression.cs" />
     <Compile Include="Evaluator.cs" />
-    <Compile Include="FloatExpression.cs" />
-    <Compile Include="IExpression.cs" />
-    <Compile Include="Indent.cs" />
-    <Compile Include="IntegerExpression.cs" />
-    <Compile Include="InternalClassExpression.cs" />
+    <Compile Include="Entity\FloatExpression.cs" />
+    <Compile Include="Common\IExpression.cs" />
+    <Compile Include="Common\Indent.cs" />
+    <Compile Include="Entity\IntegerExpression.cs" />
+    <Compile Include="Entity\InternalClassExpression.cs" />
     <Compile Include="NameSpaceExpression.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropertyExpression.cs" />
-    <Compile Include="PublicClassExpression.cs" />
-    <Compile Include="StringExpression.cs" />
+    <Compile Include="Entity\PublicClassExpression.cs" />
+    <Compile Include="Entity\StringExpression.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
