@@ -56,7 +56,7 @@ namespace WMC.Service
                         _classContent.Add(new TimeSpanExpression(tokens[1]));
                         break;
                     default:
-                        Debug.Write("Not recognized type of property, ignored. line: "+ line);
+                       _classContent.Add(new PropertyExpression(tokens[0],tokens[1]));
                         break;
                 }
                
@@ -94,7 +94,7 @@ namespace WMC.Service
 
     public class TimeSpanExpression : PropertyExpression
     {
-        public TimeSpanExpression(string propertyName):base(propertyName, "TimeSpan")
+        public TimeSpanExpression(string propertyName):base("TimeSpan", propertyName)
         {
         }
     }

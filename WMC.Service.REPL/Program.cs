@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace WMC.Service.REPL
 {
@@ -13,8 +14,10 @@ namespace WMC.Service.REPL
         private const string FileCommand = "/file";
         private const string HelpCommand = "/help";
         private const string ClearCommand = "/clear";
+        private const string ClipboardCommand = "/clipboard";
         private static Evaluator _evaluator;
         static StringBuilder sb = new StringBuilder();
+        [STAThread]
         static void Main(string[] args)
         {
             string command = "";
@@ -72,6 +75,12 @@ namespace WMC.Service.REPL
                     streamWriter.Write(_evaluator.Interpret());
                 }
             }
+            if (command == ClipboardCommand)
+            {
+                _evaluator = new Evaluator(sb.ToString());
+                var text =_evaluator.Interpret();
+                Clipboard.SetText(text);
+            }
             if (command == ClearCommand)
             {
                 sb.Clear();
@@ -97,6 +106,7 @@ namespace WMC.Service.REPL
             Console.WriteLine("?>");
             Console.WriteLine("?> /help - this message");
             Console.WriteLine("?> /clear - clears buffer");
+            Console.WriteLine("?> /clipboard - output to clipboard");
             Console.WriteLine("?> /file filename.cs - output to file");
             Console.WriteLine("?> /quit - Quit program");
         }

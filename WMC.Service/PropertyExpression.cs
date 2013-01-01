@@ -5,12 +5,13 @@ using System.Text;
 
 namespace WMC.Service
 {
-    public abstract class  PropertyExpression:IExpression
+    public class  PropertyExpression:IExpression
     {
         private string _propertyName;
         private string _propertyType;
         private const string PrivateNamePrefix = "_";
-        protected PropertyExpression(string propertyName,string propertyType)
+
+        public PropertyExpression(string propertyType, string propertyName)
         {
             _propertyName = propertyName;
             _propertyType = propertyType;
